@@ -20,31 +20,31 @@ class loginModel{
   public function setId($id)
   {
     $this->id = $id;
-    return $this->id;
+    // return $this->id;
   }
 
   public function setUserName($username)
   {
     $this->username = $username;
-    return $this->username;
+    // return $this->username;
   }
   
   public function setEmail($email)
   {
     $this->email = $email;
-    return $this->email;
+    // return $this->email;
   }
 
   public function setPassword($password)
   {
     $this->password = $password;
-    return $this->password;
+    // return $this->password;
   }
 
   public function setRoles($roles)
   {
     $this->roles = $roles;
-    return $this->roles;
+    // return $this->roles;
   }
 
 
@@ -59,7 +59,7 @@ class loginModel{
     $listuser = $sentece->fetch(PDO::FETCH_ASSOC);
     
     if(password_verify($this->password, $listuser['password'])){
-      return array('ok'=> 'true', 'roles'=> $listuser['roles'], 'username'=>  $listuser['username'] );
+      return array('ok'=> true, 'roles'=> $listuser['roles'], 'username'=>  $listuser['username'] );
     }
     
     

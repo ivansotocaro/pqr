@@ -20,6 +20,14 @@ if (isset($_POST["peticion"])) {
 
 
   switch ($listdata) {
+       case 'listdatauser':
+      
+      
+      $model->setUser($_POST['user']);
+      $datos = $model->listpqr();
+      echo json_encode($datos);
+
+      break;
 
       //Listdata product
     case 'login':
@@ -43,7 +51,6 @@ if (isset($_POST["peticion"])) {
       $model->setTypepqr($_POST["typepqr"]);
       $model->setDescription($_POST["description"]);
 
-      $model->setState($_POST["state"]);
     
      
       $datos = $model->saveUser();
@@ -52,20 +59,27 @@ if (isset($_POST["peticion"])) {
 
     case 'delete':
 
-      // $model->setId($_POST["id"]);
-      // $datos = $model->deleteProduct();
-      // echo $datos;
+      $model->setId($_POST["id"]);
+      $datos = $model->deletePqr();
+      echo $datos;
 
       break;
 
     case 'update':
 
-      // $model->setId($_POST["id"]);
-      // $datos = $model->getProduct();
-      // echo json_encode($datos);
+      $model->setId($_POST["id"]);
+      $datos = $model->getuser();
+      echo json_encode($datos);
+
+      break;
+
+    case 'updateUser':
+
+      $model->setId($_POST["id"]);
+      $datos = $model->updateuser();
+      echo json_encode($datos);
 
       break;
   }
 }
-// $obj = new productController();
-// $obj->list();
+

@@ -2,7 +2,39 @@
 
   <nav class="navbar navbar-dark bg-primary">
     <h3 style="color:white;">PQR  <?= $_SESSION['rol']?></h3>
+    <button id='btncerrar' class="btn btn-dark" >Salir</button>
   </nav>
+
+  
+  
+  <?php if($_SESSION['rol'] == 'admin'){ ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-5">
+
+        <table class="table mb-5">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="idtable">id</th>
+              <th scope="col">Pqr</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Estado</th>
+              <th scope="col">fecha cración</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableAdmin">
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <?php } ?>
+
+  <?php if($_SESSION['rol'] == 'user'){ ?>
 
   <form action="#" method="post"  id="formUser">
     <div class="container mt-5">
@@ -23,7 +55,7 @@
         </div> 
 
         <div class="col-md-5">
-          <input type="hidden" value="<?php $_SESSION['username'] ?>" id="username-peti" class="form-control">
+          <input type="hidden" value="<?php echo $_SESSION['username'] ?>" id="username-peti" class="form-control">
         
         </div>
 
@@ -38,13 +70,14 @@
 
       <div class="row mt-4">
         <div class="col-md-1">
+        
           <button name="save" type="submit" id="saveUser" class="btn btn-primary btn-sm btn-block">Add</button>
+          <button name="update" type="submit" id="updateUser" class="btn btn-danger btn-sm btn-block">update</button>
         </div>
       </div>
     </div>
   </form>
-  
-  <?php if($_SESSION['rol'] == 'admin'){ ?>
+
   <div class="container">
     <div class="row">
       <div class="col-md-12 mt-5">
@@ -53,38 +86,15 @@
           <thead class="thead-dark">
             <tr>
               <th scope="col" class="idtable">id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Description</th>
+              <th scope="col">Pqr</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Estado</th>
+              <th scope="col">fecha cración</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody id="table">
-
-          </tbody>
-        </table>
-
-      </div>
-    </div>
-  </div>
-  <?php } ?>
-
-  <?php if($_SESSION['rol'] == 'user'){ ?>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mt-5">
-
-        <table class="table mb-5">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" class="idtable">id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Description</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody id="table">
+          <tbody id="tableUser">
 
           </tbody>
         </table>

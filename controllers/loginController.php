@@ -16,7 +16,7 @@ class loginController extends loginModel
 
 if (isset($_POST["peticion"])) {
   $listdata = $_POST["peticion"];
-  $model = new userController();
+  $model = new loginController();
 
 
   switch ($listdata) {
@@ -49,22 +49,14 @@ if (isset($_POST["peticion"])) {
       echo json_encode($datos);
       break;
 
-    case 'delete':
+    case 'cerrar':
 
-      // $model->setId($_POST["id"]);
-      // $datos = $model->deleteProduct();
-      // echo $datos;
+      session_destroy();
 
-      break;
-
-    case 'update':
-
-      // $model->setId($_POST["id"]);
-      // $datos = $model->getProduct();
-      // echo json_encode($datos);
+      echo json_encode(array('ok' => true));
 
       break;
+
+    
   }
 }
-// $obj = new productController();
-// $obj->list();

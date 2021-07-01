@@ -25,8 +25,8 @@ roles varchar(150)
 CREATE TABLE pqr(
 id int(10) primary key auto_increment,
 typepqr varchar(150) not null,
-user varchar(150) UNIQUE not null,
-description varchar(150) UNIQUE not null,
+user varchar(150) not null,
+description varchar(150) not null,
 state varchar(150),
 creationdate varchar(150),
 limitedate varchar(150),

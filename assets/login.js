@@ -26,9 +26,10 @@ $(document).ready(function () {
       },
     })
       .done(function (data) {
+        // console.log(data);
         let datos = JSON.parse(data);
-        console.log(datos);
-        if (datos.ok == "true") {
+        // console.log(datos);
+        if (datos.ok) {
           //I clean the form
           clean();
           //delete
