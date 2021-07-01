@@ -1,0 +1,45 @@
+.idtable {
+  display: none;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.navbar p {
+  font-size: 20px;
+  color: white;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+#boton_update {
+  text-align: center;
+  color: #ffffff;
+  background-color: #0695e2;
+  padding: 5px 0px 5px 0px;
+  text-decoration: none;
+  margin-bottom: 3px;
+  width: 100px;
+  display: block;
+  border-radius: 5px;
+}
+
+#volver {
+  text-align: center;
+  color: #181616d5;
+  background-color: #ffffff;
+  padding: 5px 0px 5px 0px;
+  text-decoration: none;
+  margin-bottom: 3px;
+  margin-right: 20px;
+  width: 100px;
+  display: block;
+  border-radius: 5px;
+}
+
+#delete {
+  width: 100px;
+}
