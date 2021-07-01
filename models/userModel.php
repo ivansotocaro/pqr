@@ -81,6 +81,16 @@ class userModel{
     return $listpqr;
   }
 
+  function listpqrall()
+  {
+  
+    $sql = "SELECT * FROM pqr";
+    $sentence = $this->pdo->prepare($sql);
+    $sentence->execute();
+    $listpqra = $sentence->fetchAll(PDO::FETCH_ASSOC);
+    return $listpqra;
+  }
+
   function deletePqr()
   {
     $sql = "DELETE FROM pqr WHERE id ='".$this->id."'";
@@ -98,6 +108,29 @@ class userModel{
     $sentence->execute();
     $listpqr = $sentence->fetchAll(PDO::FETCH_ASSOC);
     return $listpqr;
+  }
+
+  function getEnProgreso() {
+    return 'En progreso';
+  }
+
+
+  function stateprg()
+  {
+    
+    $sql = "UPDATE pqr SET state = 'En progreso' WHERE id = '".$this->id."'";
+    $sentence = $this->pdo->prepare($sql);
+    $sentence->execute();
+    return $sentence;
+  }
+
+  function stateCerrado()
+  {
+    
+    $sql = "UPDATE pqr SET state = 'Cerrado' WHERE id = '".$this->id."'";
+    $sentence = $this->pdo->prepare($sql);
+    $sentence->execute();
+    return $sentence;
   }
   
 

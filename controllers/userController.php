@@ -80,6 +80,33 @@ if (isset($_POST["peticion"])) {
       echo json_encode($datos);
 
       break;
+    case 'enprogreso':
+
+      $model->setId($_POST["id"]);
+      $datos = $model->stateprg();
+      echo json_encode($datos);
+
+      break;
+    case 'Cerrado':
+
+      $model->setId($_POST["id"]);
+      $datos = $model->stateCerrado();
+      echo json_encode($datos);
+
+      break;
+    case 'listadminall':
+
+      if($_SESSION['rol'] == 'admin'){
+        
+        $datos = $model->listpqrall();
+        echo json_encode($datos);
+      }else{
+
+        echo json_encode(array('ok'=> false));
+      }
+      
+
+      break;
   }
 }
 
